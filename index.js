@@ -43,5 +43,43 @@ const bookStore = {
     ]
 }
 
+
 // Write your code here!
 
+//MANIPULATING EXISTING ELEMENTS:
+//1. select id of 'header'
+const bookStoreTitle = document.querySelector("#header");
+
+//2. change element to match bookstore name
+bookStoreTitle.textContent = bookStore.name;
+
+//BOOK ELEMENTS-Loop through every book element in bookStore object:
+bookStore.books.forEach(books => {
+    //1.Create elements for each book
+    const bookContainer = document.createElement('li')
+    const bookTitle = document.createElement('h3')
+    const bookAuthor = document.createElement('p')
+    const bookImage = document.createElement('img')
+
+    //2.Change the textContent of each element to match book object
+    bookTitle.textContent = books.title
+    bookAuthor.textContent = books.author
+    //*image needs to be src= "link" (hence .src)
+    bookImage.src = books.imageUrl
+
+    //3. Append book elements to bookContainer
+    bookContainer.append(bookTitle, bookAuthor, bookImage)
+
+    //4. Append bookContainer element to bookList element
+    const bookList = document.querySelector("#book-list")
+    bookList.append(bookContainer)
+    
+})
+
+    
+ 
+
+    
+   
+
+    //3.Append book elements to bookList 
