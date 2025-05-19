@@ -76,10 +76,3 @@ bookStore.books.forEach(books => {
     
 })
 
-    
- 
-
-    
-   
-
-    //3.Append book elements to bookList 
